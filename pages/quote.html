@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <base href="../">
     <title>Request Institutional Bulk Quotation | New Power Sports</title>
     <meta name="description" content="Request official institutional quotations for medical lab coats, nursing scrubs, and college uniform supply across Tamil Nadu.">
@@ -48,12 +48,17 @@
                 <a href="pages/about.html" class="nav-link">About Us</a>
                 <a href="pages/gallery.html" class="nav-link">Gallery</a>
                 <a href="pages/contact.html" class="nav-link">Contact</a>
+                <div class="mobile-menu-cta">
+                    <a href="pages/quote.html" class="btn btn-primary btn-block">
+                        <i data-lucide="file-text"></i> Request a Quote
+                    </a>
+                </div>
             </nav>
             <div class="header-actions">
-                <a href="pages/quote.html" class="btn btn-primary active">
-                    <i data-lucide="file-text"></i> Request a Quote
+                <a href="pages/quote.html" class="btn btn-primary header-quote-btn active" aria-label="Request a Bulk Quote">
+                    <i data-lucide="file-text"></i> <span class="header-quote-text">Request Quote</span>
                 </a>
-                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu"><i data-lucide="menu"></i></button>
+                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav"><i data-lucide="menu"></i></button>
             </div>
         </div>
     </header>
@@ -76,22 +81,22 @@
                         <div class="grid-2-col gap-md">
                             <div class="form-group">
                                 <label class="form-label" for="qfFullName">Full Name & Designation <span class="required-star">*</span></label>
-                                <input type="text" id="qfFullName" class="form-control" placeholder="e.g. Dr. R. Vengatachalam (Convener)" required>
+                                <input type="text" id="qfFullName" class="form-control" placeholder="e.g. Dr. R. Vengatachalam (Convener)" autocomplete="name" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="qfInstitution">Institution or Company Name <span class="required-star">*</span></label>
-                                <input type="text" id="qfInstitution" class="form-control" placeholder="e.g. Madras Medical College" required>
+                                <input type="text" id="qfInstitution" class="form-control" placeholder="e.g. Madras Medical College" autocomplete="organization" required>
                             </div>
                         </div>
 
                         <div class="grid-2-col gap-md">
                             <div class="form-group">
                                 <label class="form-label" for="qfEmail">Official Email Address <span class="required-star">*</span></label>
-                                <input type="email" id="qfEmail" class="form-control" placeholder="e.g. purchase@institution.edu" required>
+                                <input type="email" id="qfEmail" class="form-control" placeholder="e.g. purchase@institution.edu" inputmode="email" autocomplete="email" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="qfPhone">Contact Phone Number <span class="required-star">*</span></label>
-                                <input type="tel" id="qfPhone" class="form-control" placeholder="e.g. +91 93646 44771" required>
+                                <input type="tel" id="qfPhone" class="form-control" placeholder="e.g. +91 93646 44771" inputmode="tel" autocomplete="tel" required>
                             </div>
                         </div>
 
@@ -141,7 +146,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="qfQuantity">Estimated Quantity (Units) <span class="required-star">*</span></label>
-                                <input type="number" id="qfQuantity" class="form-control" placeholder="e.g. 250" min="1" value="100" required>
+                                <input type="number" id="qfQuantity" class="form-control" placeholder="e.g. 250" min="1" value="100" inputmode="numeric" required>
                             </div>
                         </div>
 
@@ -184,7 +189,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="qfCity">Delivery City / Campus Location <span class="required-star">*</span></label>
-                                <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore Campus" required>
+                                <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore Campus" autocomplete="address-level2" required>
                             </div>
                         </div>
 

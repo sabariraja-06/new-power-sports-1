@@ -403,31 +403,42 @@ function initMobileNav() {
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.setAttribute('aria-controls', 'mainNav');
 
+    function closeNav() {
+        mainNav.classList.remove('active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
     toggleBtn.addEventListener('click', () => {
         const isOpen = mainNav.classList.toggle('active');
         toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         toggleBtn.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on navigation link click
+    // Close on navigation link or button click
     const navLinks = mainNav.querySelectorAll('.nav-link, .btn');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mainNav.classList.remove('active');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            toggleBtn.classList.remove('open');
+            closeNav();
         });
     });
 
     // Close on Escape key press
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mainNav.classList.contains('active')) {
-            mainNav.classList.remove('active');
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            toggleBtn.classList.remove('open');
+            closeNav();
             toggleBtn.focus();
         }
     });
+
+    // Auto-close if resized to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024 && mainNav.classList.contains('active')) {
+            closeNav();
+        }
+    }, { passive: true });
 }
 
 // --- Active Nav Highlighting on Scroll ---

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- Primary SEO Meta Tags -->
     <title>New Power Sports | Institutional Uniforms & Medical Apparel Supplier Tamil Nadu</title>
@@ -103,14 +103,19 @@
                 <a href="#about" class="nav-link">About Us</a>
                 <a href="#gallery" class="nav-link">Gallery</a>
                 <a href="#contact" class="nav-link">Contact</a>
+                <div class="mobile-menu-cta">
+                    <button type="button" class="btn btn-primary btn-block" onclick="openQuoteModal()">
+                        <i data-lucide="file-text"></i> Request a Quote
+                    </button>
+                </div>
             </nav>
 
             <!-- Header Action CTAs -->
             <div class="header-actions">
-                <button type="button" class="btn btn-primary" onclick="openQuoteModal()">
-                    <i data-lucide="file-text"></i> Request a Quote
+                <button type="button" class="btn btn-primary header-quote-btn" onclick="openQuoteModal()" aria-label="Request a Bulk Quote">
+                    <i data-lucide="file-text"></i> <span class="header-quote-text">Request Quote</span>
                 </button>
-                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainNav">
                     <i data-lucide="menu"></i>
                 </button>
             </div>
@@ -121,6 +126,7 @@
         <!-- ==================== 3. HERO SECTION ==================== -->
         <section class="hero-section" id="home">
             <div class="container hero-grid">
+                <!-- 1 to 5: Hero Content & CTAs -->
                 <div class="hero-content-col">
                     <div class="hero-eyebrow">
                         <i data-lucide="award"></i> INSTITUTIONAL UNIFORMS & MEDICAL APPAREL
@@ -129,41 +135,25 @@
                         Quality Uniforms. <br><span class="highlight">Built for Professionals.</span>
                     </h1>
                     <p class="hero-description">
-                        Reliable lab coats, nursing uniforms and institutional workwear for colleges, hospitals, laboratories and professional teams across Tamil Nadu.
+                        Lab coats, nursing uniforms and institutional workwear for colleges, hospitals, laboratories and professional teams.
                     </p>
                     <div class="hero-actions-row">
                         <button type="button" class="btn btn-lg btn-primary" onclick="openQuoteModal()">
                             <i data-lucide="file-text"></i> Request a Bulk Quote
                         </button>
                         <a href="#products" class="btn btn-lg btn-outline">
-                            <i data-lucide="compass"></i> Explore Our Products
+                            <i data-lucide="compass"></i> Explore Products
                         </a>
-                    </div>
-
-                    <!-- Supporting Benefits Row -->
-                    <div class="hero-benefits-list">
-                        <div class="benefit-item">
-                            <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
-                            <span>Institutional Bulk Orders</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
-                            <span>Custom Logo Embroidery</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
-                            <span>Multiple Sizes & Colours</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Right Side Hero Visual Container -->
+                <!-- 6: Product / Professional Uniform Image -->
                 <div class="hero-media-wrapper">
                     <div class="hero-image-frame">
-                        <img src="assets/hero_lab_coats.jpg" alt="Medical and institutional professionals wearing New Power Sports lab coats" class="hero-main-photo">
+                        <img src="assets/hero_lab_coats.jpg" alt="Institutional Uniforms & Medical Apparel - New Power Sports" class="hero-main-photo" width="600" height="400" fetchpriority="high">
                     </div>
-                    <!-- Floating Badge: Institutional Supply -->
-                    <div class="floating-badge badge-top-left">
+                    <!-- Floating Badge: Institutional Supply (shown on desktop only) -->
+                    <div class="floating-badge badge-top-left desktop-only">
                         <div class="floating-badge-icon icon-blue-bg">
                             <i data-lucide="building"></i>
                         </div>
@@ -172,8 +162,8 @@
                             <span>Bulk Campus Deliveries</span>
                         </div>
                     </div>
-                    <!-- Floating Badge: Precision Embroidery -->
-                    <div class="floating-badge badge-bottom-right">
+                    <!-- Floating Badge: Precision Embroidery (shown on desktop only) -->
+                    <div class="floating-badge badge-bottom-right desktop-only">
                         <div class="floating-badge-icon icon-orange-bg">
                             <i data-lucide="sparkles"></i>
                         </div>
@@ -181,6 +171,22 @@
                             <strong>Computer Embroidery</strong>
                             <span>Sharp Crest & Name Stitching</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 7: Concise List of Business Benefits -->
+                <div class="hero-benefits-list">
+                    <div class="benefit-item">
+                        <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
+                        <span>Bulk Order Support</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
+                        <span>Custom Logo Embroidery</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon-badge"><i data-lucide="check"></i></span>
+                        <span>Multiple Sizes & Colours</span>
                     </div>
                 </div>
             </div>
@@ -546,17 +552,17 @@
                         <form id="generalContactForm">
                             <div class="form-group">
                                 <label class="form-label" for="cfName">Your Full Name <span class="required-star">*</span></label>
-                                <input type="text" id="cfName" class="form-control" placeholder="e.g. Dr. K. Ramesh" required>
+                                <input type="text" id="cfName" class="form-control" placeholder="e.g. Dr. K. Ramesh" autocomplete="name" required>
                             </div>
 
                             <div class="grid-2-col gap-md">
                                 <div class="form-group">
                                     <label class="form-label" for="cfPhone">Phone Number <span class="required-star">*</span></label>
-                                    <input type="tel" id="cfPhone" class="form-control" placeholder="e.g. 9364644771" required>
+                                    <input type="tel" id="cfPhone" class="form-control" placeholder="e.g. 9364644771" inputmode="tel" autocomplete="tel" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" for="cfEmail">Email Address</label>
-                                    <input type="email" id="cfEmail" class="form-control" placeholder="e.g. purchase@college.edu">
+                                    <input type="email" id="cfEmail" class="form-control" placeholder="e.g. purchase@college.edu" inputmode="email" autocomplete="email">
                                 </div>
                             </div>
 
@@ -682,22 +688,22 @@
                     <div class="grid-2-col gap-md">
                         <div class="form-group">
                             <label class="form-label" for="qfFullName">Full Name & Designation <span class="required-star">*</span></label>
-                            <input type="text" id="qfFullName" class="form-control" placeholder="e.g. Dr. R. Vengatachalam (Convener)" required>
+                            <input type="text" id="qfFullName" class="form-control" placeholder="e.g. Dr. R. Vengatachalam (Convener)" autocomplete="name" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qfInstitution">Institution or Company Name <span class="required-star">*</span></label>
-                            <input type="text" id="qfInstitution" class="form-control" placeholder="e.g. Madras Medical College" required>
+                            <input type="text" id="qfInstitution" class="form-control" placeholder="e.g. Madras Medical College" autocomplete="organization" required>
                         </div>
                     </div>
 
                     <div class="grid-2-col gap-md">
                         <div class="form-group">
                             <label class="form-label" for="qfEmail">Official Email Address <span class="required-star">*</span></label>
-                            <input type="email" id="qfEmail" class="form-control" placeholder="e.g. purchase@institution.edu" required>
+                            <input type="email" id="qfEmail" class="form-control" placeholder="e.g. purchase@institution.edu" inputmode="email" autocomplete="email" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qfPhone">Contact Phone Number <span class="required-star">*</span></label>
-                            <input type="tel" id="qfPhone" class="form-control" placeholder="e.g. +91 93646 44771" required>
+                            <input type="tel" id="qfPhone" class="form-control" placeholder="e.g. +91 93646 44771" inputmode="tel" autocomplete="tel" required>
                         </div>
                     </div>
 
@@ -747,7 +753,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qfQuantity">Estimated Quantity (Units) <span class="required-star">*</span></label>
-                            <input type="number" id="qfQuantity" class="form-control" placeholder="e.g. 250" min="1" value="100" required>
+                            <input type="number" id="qfQuantity" class="form-control" placeholder="e.g. 250" min="1" value="100" inputmode="numeric" required>
                         </div>
                     </div>
 
@@ -790,7 +796,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="qfCity">Delivery City / Campus Location <span class="required-star">*</span></label>
-                            <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore Campus" required>
+                            <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore Campus" autocomplete="address-level2" required>
                         </div>
                     </div>
 
