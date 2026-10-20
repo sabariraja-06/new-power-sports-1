@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Request Institutional Bulk Quotation | New Power Sports</title>
+    <meta name="description" content="Request official institutional quotations for medical lab coats, nursing scrubs, and college uniform supply across Tamil Nadu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+        <div class="container flex-between">
+            <div class="top-bar-left">
+                <span class="top-region-tag"><i data-lucide="map-pin"></i> Serving Tamil Nadu & Regional Institutional Hubs</span>
+                <span class="top-divider">|</span>
+                <span class="gst-badge-pill">GSTIN: 33GXIPS9456RIZ6</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+919364644771"><i data-lucide="phone"></i> +91 93646 44771</a>
+                <span class="top-divider">|</span>
+                <a href="mailto:powergarments2015@gmail.com"><i data-lucide="mail"></i> powergarments2015@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo-link">
+                <div class="brand-symbol-box"><i data-lucide="shield-check"></i></div>
+                <div class="brand-typography">
+                    <span class="brand-primary-name">NEW POWER SPORTS</span>
+                    <span class="brand-sub-title">Institutional Uniforms & Medical Apparel</span>
+                </div>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="pages/products.html" class="nav-link">Products</a>
+                <a href="pages/industries.html" class="nav-link">Industries</a>
+                <a href="pages/customization.html" class="nav-link">Customization</a>
+                <a href="pages/about.html" class="nav-link">About Us</a>
+                <a href="pages/gallery.html" class="nav-link">Gallery</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="pages/quote.html" class="btn btn-primary active">
+                    <i data-lucide="file-text"></i> Request a Quote
+                </a>
+                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-navy section-padding-sm text-center">
+            <div class="container">
+                <span class="section-eyebrow text-white" style="background: rgba(255,255,255,0.15); color: #fff;">OFFICIAL QUOTATION</span>
+                <h1 class="text-white mt-sm mb-xs">Request Institutional Bulk Quotation</h1>
+                <p class="text-white" style="opacity: 0.85; max-width: 640px; margin: 0 auto;">
+                    Submit your organization's uniform requirements for an official GST quotation, fabric swatches, and sizing sample sets.
+                </p>
+            </div>
+        </div>
+
+        <section class="section-padding bg-light">
+            <div class="container" style="max-width: 860px;">
+                <div class="contact-form-box">
+                    <form id="institutionalQuoteForm" novalidate>
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfFullName">Full Name & Designation <span class="required-star">*</span></label>
+                                <input type="text" id="qfFullName" class="form-control" placeholder="e.g. Dr. R. Vengatachalam (Convener)" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfInstitution">Institution or Company Name <span class="required-star">*</span></label>
+                                <input type="text" id="qfInstitution" class="form-control" placeholder="e.g. Madras Medical College" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfEmail">Official Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="qfEmail" class="form-control" placeholder="e.g. purchase@institution.edu" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfPhone">Contact Phone Number <span class="required-star">*</span></label>
+                                <input type="tel" id="qfPhone" class="form-control" placeholder="e.g. +91 93646 44771" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfInstitutionType">Institution Type <span class="required-star">*</span></label>
+                                <select id="qfInstitutionType" class="form-control">
+                                    <option value="Medical and Nursing Colleges">Medical and Nursing Colleges</option>
+                                    <option value="Hospitals and Healthcare Providers">Hospitals and Healthcare Providers</option>
+                                    <option value="Diagnostic and Research Laboratories">Diagnostic and Research Laboratories</option>
+                                    <option value="Pharmacy and Paramedical Institutions">Pharmacy and Paramedical Institutions</option>
+                                    <option value="Engineering and Technical Colleges">Engineering and Technical Colleges</option>
+                                    <option value="Industrial Organizations">Industrial Organizations</option>
+                                    <option value="Hospitality Businesses">Hospitality Businesses</option>
+                                    <option value="Other Institutional Buyer">Other Institutional Buyer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfCategory">Product Category <span class="required-star">*</span></label>
+                                <select id="qfCategory" class="form-control">
+                                    <option value="Medical Lab Coats">Medical Lab Coats</option>
+                                    <option value="Nursing Uniforms">Nursing Uniforms</option>
+                                    <option value="Paramedical Uniforms">Paramedical Uniforms</option>
+                                    <option value="Laboratory Attendant Uniforms">Laboratory Attendant Uniforms</option>
+                                    <option value="Industrial Workwear">Industrial Workwear</option>
+                                    <option value="Hospital Staff Uniforms">Hospital Staff Uniforms</option>
+                                    <option value="Faculty and Student Uniforms">Faculty and Student Uniforms</option>
+                                    <option value="Hospitality Uniforms">Hospitality Uniforms</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfProduct">Selected Uniform Model</label>
+                                <select id="qfProduct" class="form-control">
+                                    <option value="Standard Student Poly-Cotton Lab Coat">Standard Student Poly-Cotton Lab Coat</option>
+                                    <option value="Executive Doctor Notch-Lapel Consultation Coat">Executive Doctor Notch-Lapel Consultation Coat</option>
+                                    <option value="Clinical Nursing Scrub Suit & Coat Set">Clinical Nursing Scrub Suit & Coat Set</option>
+                                    <option value="Paramedical & Emergency Staff Uniform">Paramedical & Emergency Staff Uniform</option>
+                                    <option value="Laboratory Attendant Protective Coat">Laboratory Attendant Protective Coat</option>
+                                    <option value="Industrial Workwear & Safety Boiler Suit">Industrial Workwear & Safety Boiler Suit</option>
+                                    <option value="Hospital Support Staff & Ward Attendant Uniform">Hospital Support Staff & Ward Attendant Uniform</option>
+                                    <option value="Faculty & Senior Academic Batch Apron">Faculty & Senior Academic Batch Apron</option>
+                                    <option value="Hospitality & Institutional Food Service Coat">Hospitality & Institutional Food Service Coat</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfQuantity">Estimated Quantity (Units) <span class="required-star">*</span></label>
+                                <input type="number" id="qfQuantity" class="form-control" placeholder="e.g. 250" min="1" value="100" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label">Required Sizes</label>
+                                <div class="checkbox-group-grid">
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="XS"> XS</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="S" checked> S</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="M" checked> M</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="L" checked> L</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="XL" checked> XL</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="2XL"> 2XL</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="3XL"> 3XL</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfSizes" value="Custom"> Custom</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Preferred Colours</label>
+                                <div class="checkbox-group-grid">
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfColours" value="White" checked> White</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfColours" value="Sky Blue"> Sky Blue</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfColours" value="Navy Blue"> Navy Blue</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfColours" value="Green"> Green</label>
+                                    <label class="custom-checkbox-btn"><input type="checkbox" name="qfColours" value="Custom"> Custom</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfEmbroidery">Logo Embroidery Requirement</label>
+                                <select id="qfEmbroidery" class="form-control">
+                                    <option value="Yes - College Crest & Department Name">Yes — College Crest & Department Name</option>
+                                    <option value="Yes - College Crest + Student Name Tag">Yes — College Crest + Student Name Tag</option>
+                                    <option value="No - Plain Uniforms Without Embroidery">No — Plain Uniforms</option>
+                                    <option value="Require Guidance on Embroidery">Need Guidance on Embroidery</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfCity">Delivery City / Campus Location <span class="required-star">*</span></label>
+                                <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore Campus" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2-col gap-md">
+                            <div class="form-group">
+                                <label class="form-label" for="qfDeliveryDate">Expected Delivery Date (Optional)</label>
+                                <input type="date" id="qfDeliveryDate" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="qfNotes">Additional Requirements</label>
+                                <textarea id="qfNotes" class="form-control" rows="2" placeholder="Fabric preferences, batch roll numbers, sample coat request..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-lg">
+                            <label class="consent-row">
+                                <input type="checkbox" id="qfConsent" required>
+                                <span>I consent to be contacted by New Power Sports sales team regarding this quotation requirement via phone or email. <span class="required-star">*</span></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <i data-lucide="send"></i> Submit Quotation Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom-strip flex-between">
+                <div>© 2026 New Power Sports. All rights reserved. Your Uniform Partner.</div>
+                <div class="footer-bottom-links">
+                    <a href="pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="pages/terms.html">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

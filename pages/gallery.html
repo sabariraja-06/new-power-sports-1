@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Product Gallery & Lightbox | New Power Sports</title>
+    <meta name="description" content="View high-resolution photography of student lab coats, doctor consultation coats, precision logo embroidery, and institutional uniform dispatches.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+        <div class="container flex-between">
+            <div class="top-bar-left">
+                <span class="top-region-tag"><i data-lucide="map-pin"></i> Serving Tamil Nadu & Regional Institutional Hubs</span>
+                <span class="top-divider">|</span>
+                <span class="gst-badge-pill">GSTIN: 33GXIPS9456RIZ6</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+919364644771"><i data-lucide="phone"></i> +91 93646 44771</a>
+                <span class="top-divider">|</span>
+                <a href="mailto:powergarments2015@gmail.com"><i data-lucide="mail"></i> powergarments2015@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo-link">
+                <div class="brand-symbol-box"><i data-lucide="shield-check"></i></div>
+                <div class="brand-typography">
+                    <span class="brand-primary-name">NEW POWER SPORTS</span>
+                    <span class="brand-sub-title">Institutional Uniforms & Medical Apparel</span>
+                </div>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="pages/products.html" class="nav-link">Products</a>
+                <a href="pages/industries.html" class="nav-link">Industries</a>
+                <a href="pages/customization.html" class="nav-link">Customization</a>
+                <a href="pages/about.html" class="nav-link">About Us</a>
+                <a href="pages/gallery.html" class="nav-link active">Gallery</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="pages/quote.html" class="btn btn-primary">
+                    <i data-lucide="file-text"></i> Request a Quote
+                </a>
+                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="bg-navy section-padding-sm text-center">
+            <div class="container">
+                <span class="section-eyebrow text-white" style="background: rgba(255,255,255,0.15); color: #fff;">PRODUCT PHOTOGRAPHY</span>
+                <h1 class="text-white mt-sm mb-xs">Product & Supply Gallery</h1>
+                <p class="text-white" style="opacity: 0.85; max-width: 640px; margin: 0 auto;">
+                    Inspect our actual garment stitch quality, embroidery precision, and institutional packaging.
+                </p>
+            </div>
+        </div>
+
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="gallery-filter-tabs">
+                    <button type="button" class="gallery-tab-btn active" onclick="filterGalleryCategory('all', this)">All Showcase</button>
+                    <button type="button" class="gallery-tab-btn" onclick="filterGalleryCategory('lab-coats', this)">Lab Coats</button>
+                    <button type="button" class="gallery-tab-btn" onclick="filterGalleryCategory('doctor-coats', this)">Doctor Coats</button>
+                    <button type="button" class="gallery-tab-btn" onclick="filterGalleryCategory('nursing', this)">Nursing Uniforms</button>
+                    <button type="button" class="gallery-tab-btn" onclick="filterGalleryCategory('embroidery', this)">Embroidery Details</button>
+                    <button type="button" class="gallery-tab-btn" onclick="filterGalleryCategory('institutional', this)">Packaging & Logistics</button>
+                </div>
+
+                <div class="grid-3-col" id="galleryGridContainer">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom-strip flex-between">
+                <div>© 2026 New Power Sports. All rights reserved. Your Uniform Partner.</div>
+                <div class="footer-bottom-links">
+                    <a href="pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="pages/terms.html">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="modal-backdrop" id="lightboxModal" role="dialog" aria-modal="true">
+        <div class="lightbox-content-box">
+            <button type="button" class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">&times;</button>
+            <button type="button" class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous Image">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button type="button" class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1)" aria-label="Next Image">
+                <i data-lucide="chevron-right"></i>
+            </button>
+            <div class="lightbox-image-wrapper">
+                <img id="lightboxImg" src="" alt="">
+            </div>
+            <div class="lightbox-details">
+                <span class="badge badge-accent mb-xs" id="lightboxCategory"></span>
+                <h3 class="text-white mb-xs" id="lightboxTitle"></h3>
+                <p class="small" id="lightboxCaption" style="color: rgba(255,255,255,0.8);"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Procurement Enquiry Management | New Power Sports Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Standalone Admin Stylesheet -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- ==================== COMPACT ADMIN HEADER ==================== -->
+    <header class="admin-navbar">
+        <div class="admin-nav-left">
+            <div class="admin-brand-icon">
+                <i data-lucide="shield-check"></i>
+            </div>
+            <div class="admin-brand-title">
+                NEW POWER SPORTS <span style="font-weight:400; opacity:0.6; margin:0 4px;">|</span> <span class="admin-pill-tag">Admin</span>
+            </div>
+        </div>
+        <div class="admin-nav-right">
+            <a href="index.html" class="admin-nav-link" title="Open Public Website">
+                <i data-lucide="globe"></i> Return to Public Site
+            </a>
+            <button type="button" class="admin-btn-logout" onclick="handleAdminLogout()" title="Sign Out">
+                <i data-lucide="log-out"></i> Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN DASHBOARD BODY ==================== -->
+    <main class="admin-container">
+        
+        <!-- Local Demo Notice Banner -->
+        <div class="admin-notice-banner">
+            <div class="admin-notice-content">
+                <i data-lucide="info"></i>
+                <span><strong>Procurement Data Store:</strong> Enquiries submitted via the public quotation form are stored in browser localStorage (<code>nps_enquiries</code>). In production, connect this portal to a secure authenticated API.</span>
+            </div>
+            <button type="button" class="btn-admin btn-admin-outline" style="padding:4px 10px; font-size:0.78rem;" onclick="this.parentElement.style.display='none'">
+                Dismiss
+            </button>
+        </div>
+
+        <!-- Dashboard Header & Top Actions -->
+        <div class="admin-title-row">
+            <div>
+                <h1 class="admin-heading">Procurement Enquiry Management</h1>
+                <p class="admin-subheading">Review institutional uniform quotation requests, batch orders, and delivery coordination.</p>
+            </div>
+            <div class="admin-action-buttons">
+                <button type="button" class="btn-admin btn-admin-outline" onclick="refreshAdminData()">
+                    <i data-lucide="refresh-cw"></i> Refresh
+                </button>
+                <button type="button" class="btn-admin btn-admin-primary" onclick="exportAdminCSV()">
+                    <i data-lucide="download"></i> Export to CSV
+                </button>
+            </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="admin-stats-grid">
+            <div class="admin-stat-card stat-blue">
+                <div class="stat-label">Total Enquiries Logged</div>
+                <div class="stat-number" id="statTotalCount">0</div>
+                <span class="stat-badge" style="background:#EFF6FF; color:var(--admin-blue);">All Inquiries</span>
+            </div>
+            <div class="admin-stat-card stat-orange">
+                <div class="stat-label">Action Required</div>
+                <div class="stat-number" style="color:var(--admin-orange);" id="statActionCount">0</div>
+                <span class="stat-badge" style="background:#FEF3C7; color:#92400E;">New & Contacted</span>
+            </div>
+            <div class="admin-stat-card stat-green">
+                <div class="stat-label">Confirmed Batch Orders</div>
+                <div class="stat-number" style="color:var(--admin-success);" id="statConfirmedCount">0</div>
+                <span class="stat-badge" style="background:#D1FAE5; color:#065F46;">Ready for Dispatch</span>
+            </div>
+            <div class="admin-stat-card">
+                <div class="stat-label">Active Quotes Sent</div>
+                <div class="stat-number" id="statQuotedCount">0</div>
+                <span class="stat-badge" style="background:#F1F5F9; color:var(--admin-text-muted);">In Discussion</span>
+            </div>
+        </div>
+
+        <!-- Enquiry Management Panel -->
+        <div class="admin-panel-card">
+            
+            <!-- Filter & Search Toolbar -->
+            <div class="admin-toolbar">
+                <div class="admin-search-box">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="adminSearchInput" class="admin-search-input" placeholder="Search by institution, contact person, city, or ID...">
+                </div>
+
+                <div class="admin-filter-tabs">
+                    <button type="button" class="admin-filter-pill active" onclick="filterStatus('all', this)">All</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('New', this)">New</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('Contacted', this)">Contacted</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('Quoted', this)">Quoted</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('In Discussion', this)">In Discussion</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('Confirmed', this)">Confirmed</button>
+                    <button type="button" class="admin-filter-pill" onclick="filterStatus('Closed', this)">Closed</button>
+                </div>
+            </div>
+
+            <!-- Enquiry Table -->
+            <div class="admin-table-responsive">
+                <table class="admin-enquiries-table">
+                    <thead>
+                        <tr>
+                            <th>Ref ID / Date</th>
+                            <th>Institution & Location</th>
+                            <th>Contact Person</th>
+                            <th>Quantity & Model</th>
+                            <th>Status</th>
+                            <th>Update Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminEnquiriesBody">
+                        <!-- Populated dynamically by admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== STANDALONE ADMIN FOOTER ==================== -->
+    <footer class="admin-footer">
+        <div class="admin-footer-content">
+            <div>
+                © 2026 New Power Sports • Procurement Administration Dashboard
+            </div>
+            <div>
+                GSTIN: 33GXIPS9456RIZ6 • Tamil Nadu Regional Supply
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== ENQUIRY FULL DETAIL MODAL ==================== -->
+    <div class="admin-modal-backdrop" id="enquiryDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalRefId">
+        <div class="admin-modal-box">
+            <div class="admin-modal-header">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <i data-lucide="file-text"></i>
+                    <h3 id="modalRefTitle">Enquiry Specification (<span id="modalRefId"></span>)</h3>
+                </div>
+                <button type="button" class="admin-modal-close" onclick="closeEnquiryModal()">&times;</button>
+            </div>
+            <div class="admin-modal-body" id="modalDetailBody">
+                <!-- Dynamically filled by admin.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Standalone Admin Scripts -->
+    <script src="admin.js"></script>
+</body>
+</html>

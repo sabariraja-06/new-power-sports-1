@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>Products Catalogue | New Power Sports - Institutional Uniforms Tamil Nadu</title>
+    <meta name="description" content="Browse our complete range of institutional medical lab coats, nursing uniforms, paramedical workwear, and customized academic coats for colleges across Tamil Nadu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+        <div class="container flex-between">
+            <div class="top-bar-left">
+                <span class="top-region-tag"><i data-lucide="map-pin"></i> Serving Tamil Nadu & Regional Institutional Hubs</span>
+                <span class="top-divider">|</span>
+                <span class="gst-badge-pill">GSTIN: 33GXIPS9456RIZ6</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+919364644771"><i data-lucide="phone"></i> +91 93646 44771</a>
+                <span class="top-divider">|</span>
+                <a href="mailto:powergarments2015@gmail.com"><i data-lucide="mail"></i> powergarments2015@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo-link">
+                <div class="brand-symbol-box"><i data-lucide="shield-check"></i></div>
+                <div class="brand-typography">
+                    <span class="brand-primary-name">NEW POWER SPORTS</span>
+                    <span class="brand-sub-title">Institutional Uniforms & Medical Apparel</span>
+                </div>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="pages/products.html" class="nav-link active">Products</a>
+                <a href="pages/industries.html" class="nav-link">Industries</a>
+                <a href="pages/customization.html" class="nav-link">Customization</a>
+                <a href="pages/about.html" class="nav-link">About Us</a>
+                <a href="pages/gallery.html" class="nav-link">Gallery</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="pages/quote.html" class="btn btn-primary">
+                    <i data-lucide="file-text"></i> Request a Quote
+                </a>
+                <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle menu"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <div class="bg-navy section-padding-sm text-center">
+            <div class="container">
+                <span class="section-eyebrow text-white" style="background: rgba(255,255,255,0.15); color: #fff;">FULL CATALOGUE</span>
+                <h1 class="text-white mt-sm mb-xs">Institutional Uniform Catalogue</h1>
+                <p class="text-white" style="opacity: 0.85; max-width: 640px; margin: 0 auto;">
+                    Standardized medical lab coats, nursing uniforms, and industrial apparel engineered for colleges, hospitals, and technical centers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Catalogue Body -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="catalog-toolbar">
+                    <div class="catalog-tabs-container">
+                        <button type="button" class="catalog-tab-btn active" data-cat="all" onclick="filterProductCategory('all', this)">All Categories</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="medical-coats" onclick="filterProductCategory('medical-coats', this)">Medical Lab Coats</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="nursing-uniforms" onclick="filterProductCategory('nursing-uniforms', this)">Nursing Uniforms</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="paramedical-uniforms" onclick="filterProductCategory('paramedical-uniforms', this)">Paramedical</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="lab-attendants" onclick="filterProductCategory('lab-attendants', this)">Lab Attendants</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="industrial-workwear" onclick="filterProductCategory('industrial-workwear', this)">Industrial Workwear</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="hospital-staff" onclick="filterProductCategory('hospital-staff', this)">Hospital Staff</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="faculty-student" onclick="filterProductCategory('faculty-student', this)">Faculty & Students</button>
+                        <button type="button" class="catalog-tab-btn" data-cat="hospitality-uniforms" onclick="filterProductCategory('hospitality-uniforms', this)">Hospitality</button>
+                    </div>
+
+                    <div class="flex-between flex-wrap gap-md">
+                        <div class="search-input-wrapper">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="catalogSearchInput" class="search-input" placeholder="Search by uniform name, fabric, or keyword..." oninput="handleProductSearch(event)">
+                        </div>
+                        <div class="small text-muted">
+                            <i data-lucide="info"></i> Institutional quotes available with custom college logo embroidery.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-3-col" id="productCatalogueGrid">
+                    <!-- Populated dynamically by app.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="grid-4-col mb-xl">
+                <div>
+                    <div class="brand-logo-link mb-md">
+                        <div class="brand-symbol-box" style="background: var(--primary-blue);"><i data-lucide="shield-check"></i></div>
+                        <div class="brand-typography">
+                            <span class="brand-primary-name text-white">NEW POWER SPORTS</span>
+                            <span class="brand-sub-title text-muted">Your Uniform Partner</span>
+                        </div>
+                    </div>
+                    <p class="small text-muted mb-md">Institutional uniforms, medical lab coats, nursing uniforms, and professional workwear across Tamil Nadu.</p>
+                    <div class="small text-muted"><strong>GSTIN:</strong> 33GXIPS9456RIZ6</div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/products.html">Products</a></li>
+                        <li><a href="pages/industries.html">Industries</a></li>
+                        <li><a href="pages/customization.html">Customization</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                        <li><a href="pages/gallery.html">Gallery</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Uniform Categories</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="pages/products.html">Medical Lab Coats</a></li>
+                        <li><a href="pages/products.html">Nursing Uniforms</a></li>
+                        <li><a href="pages/products.html">Paramedical Apparel</a></li>
+                        <li><a href="pages/products.html">Institutional Uniforms</a></li>
+                        <li><a href="pages/products.html">Industrial Workwear</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Contact & Service</h4>
+                    <div class="footer-contact-item"><i data-lucide="phone"></i> <div><a href="tel:+919364644771">+91 93646 44771</a></div></div>
+                    <div class="footer-contact-item"><i data-lucide="phone-call"></i> <div><a href="tel:+919841587411">+91 98415 87411</a></div></div>
+                    <div class="footer-contact-item"><i data-lucide="mail"></i> <div><a href="mailto:powergarments2015@gmail.com">powergarments2015@gmail.com</a></div></div>
+                </div>
+            </div>
+            <div class="footer-bottom-strip flex-between">
+                <div>© 2026 New Power Sports. All rights reserved. Your Uniform Partner.</div>
+                <div class="footer-bottom-links">
+                    <a href="pages/privacy-policy.html">Privacy Policy</a>
+                    <a href="pages/terms.html">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-backdrop" id="productDetailModal" role="dialog" aria-modal="true" aria-labelledby="pdmTitle">
+        <div class="modal-box modal-lg">
+            <div class="modal-header bg-navy text-white flex-between">
+                <h3 class="text-white mb-0" id="pdmTitle">Uniform Specification</h3>
+                <button type="button" class="close-modal text-white" onclick="closeProductModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="pdmBody"></div>
+        </div>
+    </div>
+
+    <!-- Bulk Quote Modal -->
+    <div class="modal-backdrop" id="bulkQuoteModal" role="dialog" aria-modal="true">
+        <div class="modal-box modal-lg">
+            <div class="modal-header bg-navy text-white flex-between">
+                <h3 class="text-white mb-0">Request Institutional Bulk Quotation</h3>
+                <button type="button" class="close-modal text-white" onclick="closeQuoteModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="institutionalQuoteForm" novalidate>
+                    <div class="grid-2-col gap-md">
+                        <div class="form-group">
+                            <label class="form-label" for="qfFullName">Full Name & Designation *</label>
+                            <input type="text" id="qfFullName" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="qfInstitution">Institution or Company Name *</label>
+                            <input type="text" id="qfInstitution" class="form-control" placeholder="College / Hospital Name" required>
+                        </div>
+                    </div>
+                    <div class="grid-2-col gap-md">
+                        <div class="form-group">
+                            <label class="form-label" for="qfEmail">Official Email Address *</label>
+                            <input type="email" id="qfEmail" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="qfPhone">Contact Phone Number *</label>
+                            <input type="tel" id="qfPhone" class="form-control" placeholder="10-digit Phone" required>
+                        </div>
+                    </div>
+                    <div class="grid-2-col gap-md">
+                        <div class="form-group">
+                            <label class="form-label" for="qfCategory">Product Category *</label>
+                            <select id="qfCategory" class="form-control">
+                                <option value="Medical Lab Coats">Medical Lab Coats</option>
+                                <option value="Nursing Uniforms">Nursing Uniforms</option>
+                                <option value="Paramedical Uniforms">Paramedical Uniforms</option>
+                                <option value="Industrial Workwear">Industrial Workwear</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="qfQuantity">Estimated Quantity *</label>
+                            <input type="number" id="qfQuantity" class="form-control" min="1" value="100" required>
+                        </div>
+                    </div>
+                    <div class="grid-2-col gap-md">
+                        <div class="form-group">
+                            <label class="form-label" for="qfCity">Delivery City in Tamil Nadu *</label>
+                            <input type="text" id="qfCity" class="form-control" placeholder="e.g. Chennai / Coimbatore" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="qfEmbroidery">Logo Embroidery</label>
+                            <select id="qfEmbroidery" class="form-control">
+                                <option value="Yes - College Crest & Department Name">Yes — College Crest & Department Name</option>
+                                <option value="No - Plain Uniforms">No — Plain Uniforms</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-md">
+                        <label class="consent-row">
+                            <input type="checkbox" id="qfConsent" required>
+                            <span>I consent to be contacted regarding this quotation. *</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Quotation Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Button -->
+    <a href="tel:+919364644771" id="floatingWhatsAppWidget" class="floating-contact-btn" title="Call Sales">
+        <i data-lucide="phone"></i>
+        <span class="wa-tooltip">Call Sales: +91 93646 44771</span>
+    </a>
+
+    <div id="toastContainer" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

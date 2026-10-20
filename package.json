@@ -1,0 +1,12 @@
+{
+  "name": "new-power-sports",
+  "version": "1.0.0",
+  "description": "New Power Sports website",
+  "scripts": {
+    "dev": "npx serve -l 8080 .",
+    "start": "npx serve -l 8080 ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
